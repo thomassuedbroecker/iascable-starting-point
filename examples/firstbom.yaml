@@ -1,0 +1,8 @@
+apiVersion: cloudnativetoolkit.dev/v1alpha1
+kind: BillOfMaterial
+metadata:
+  name: ibm-vpc
+spec:
+  modules:
+    - name: ibm-vpc
+    - name: ibm-vpc-subnets
