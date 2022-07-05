@@ -106,11 +106,29 @@ iascable build -i firstbom.yaml
     └── launch.sh
 ```
 
-* Terraform
+* `output/ibm-vpc/terraform` folder
 
 | Filename | Content |
 | --- | --- |
-| `main.tf` | Here you see a number of modules defined including the defined `ibm-vpc` and `ibm-vpc-subnets` from the BOM file. |
-| `providers.tf` | Simply contains the needed cloud provider information. In that case what we need to specify for `IBM Cloud`. |
-| `variables.ft` | Contains the specification for the used variable in the `main.tf` or other Terrafrom files. |
-| `version.ft` | Contains the specification for the used Terrafrom provider sources and versions. In that case only IBM is listed.|
+| `ibm-vpc/terraform/main.tf` | Here you see a number of modules defined including the defined `ibm-vpc` and `ibm-vpc-subnets` from the BOM file. |
+| `ibm-vpc/terraform/providers.tf` | Simply contains the needed cloud provider information. In that case what we need to specify for `IBM Cloud`. |
+| `ibm-vpc/terraform/variables.ft` | Contains the specification for the used variable in the `main.tf` or other Terrafrom files. |
+| `ibm-vpc/terraform/version.ft` | Contains the specification for the used Terrafrom provider sources and versions. In that case only IBM is listed.|
+| `ibm-vpc/terraform/ibm-vpc.auto.tfvars` | That file can be used to configure the variable values. (maybe add to .gitignore) During the execution of `terraform plan` and `terraform apply` you will be ask for input, if you didn't specify that values. |
+
+* The `output/launch.sh` file
+
+That script download and starts a container on your local machine. The objective to ensure that the right environment is used for applying the Terraform configuration.
+
+It attaches the local path to the container and a volume.
+
+> Note: Need to ensure you have a container engine on your machine. Best Docker! Because by default is uses Docker. Attach doesn't work for `podman` on macOS.
+
+* The `output/ibm-vpc/apply.sh` file
+
+That file converts a existing `variable.yaml` file to a `variables.tf` and then executes `terraform init` and `terraform apply`.
+
+* The `output/ibm-vpc/destroy.sh` file
+
+That file simply executes the `terraform init` and 
+`terraform destroy -auto-approve` commands.
