@@ -126,9 +126,15 @@ It attaches the local path to the container and a volume.
 
 * The `output/ibm-vpc/apply.sh` file
 
-That file converts a existing `variable.yaml` file to a `variables.tf` and then executes `terraform init` and `terraform apply`.
+That file converts an existing `variable.yaml` file to a `variables.tf` and then executes `terraform init` and `terraform apply`.
 
 * The `output/ibm-vpc/destroy.sh` file
 
 That file simply executes the `terraform init` and 
 `terraform destroy -auto-approve` commands.
+
+* The `ibm-vpc/dependencies.dot` file
+
+That file contains the dependencies which can be visualized for example with [Graphviz Online](https://dreampuf.github.io/GraphvizOnline/).
+
+Example: ![](images/digraph-dependencies.png)
