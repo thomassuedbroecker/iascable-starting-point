@@ -1,11 +1,37 @@
 # iascable-starting-point
 
 This is just a starting point to use IasCable.
+`IasCable` is mainly build on Terraform.
 
-Resource:
+That GitHub project uses following resource as input:
 
-* [Iascable](https://github.com/cloud-native-toolkit/iascable)
+* [IasCable](https://github.com/cloud-native-toolkit/iascable)
 
+### [Bill of Material](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [Modules](https://modules.cloudnativetoolkit.dev/)
+
+The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. Which is the heart of the framework we could say.
+
+Simplified we can as it a [BOM is specified](https://github.com/cloud-native-toolkit/iascable#bom-spec) by modules it uses, variables you can define and providers you can define.
+
+This is a simplified overview diagram.
+
+![](images/ascale-bom-overview.drawio.png)
+
+
+### Prequisites
+
+Following tools need to be installed on your local computer for follow the step by step instructions.
+
+* Terraform
+* Git
+
+Cloud environment.
+
+* IBM Cloud
+
+### Step by step example setup
+
+This is a step by step example setup to create a `Virtual Private Cloud` with one `Subnet` on IBM Cloud.
 
 ### Step 1: Install CLI
 
@@ -165,3 +191,13 @@ var.ibmcloud_api_key
   Enter a value: 
 ```
 
+> Note: You can create an IBM Cloud API Key with following command: `ibmcloud iam api-key-create iascable-example`.
+
+
+### Step 6: Execute the `terraform plan`
+
+Execute the `terraform apply` command.
+
+```sh
+terraform apply
+```
