@@ -7,19 +7,25 @@ That GitHub project uses following resource as input:
 
 * [IasCable](https://github.com/cloud-native-toolkit/iascable)
 
+## The `IasCable` framework
+
+Let us have first a look the basic components of the `IasCable` framework.
+
 ### [Bill of Material](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [Modules](https://modules.cloudnativetoolkit.dev/)
 
-The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. These two part are the heart of the framework we could say.
+The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. These two part are the heart of the framework we could say. 
 
-Simplified we can as it a [BOM is specified](https://github.com/cloud-native-toolkit/iascable#bom-spec) by modules it uses, variables you can define and providers you can define.
-It is good to know that modules can depend on other modeles.
+> Please visit the linked resources for more details.
+
+Simplified we can say a [BOM is specified](https://github.com/cloud-native-toolkit/iascable#bom-spec) by modules it uses, variables you can define and providers you can define.
+It is good to know that modules can depend on other modeles, if this is the case the related modules will be included by the framework, as far as I understand.
 
 Here is a simplified overview diagram:
 
 ![](images/ascale-bom-overview.drawio.png)
 
 
-### Prequisites
+## Prequisites for the example
 
 Following tools need to be installed on your local computer for follow the step by step instructions.
 
@@ -35,6 +41,10 @@ That is the cloud environment we will use.
 This is a step by step example setup to create a `Virtual Private Cloud` with three `Subnets` on IBM Cloud.
 
 * 1 x `Virtual Private Cloud`
+* 3 x `Subnets`
+* 2 x `Access Control Lists`
+* 1 x `Routing Table`
+* 2 x `Security Groups`
 
 * Simplified architecture overview
 
@@ -173,7 +183,7 @@ That file contains the dependencies which can be visualized for example with [Gr
 
 Example: ![](images/digraph-dependencies.png)
 
-### Step 6: Execute the `terraform init`
+### Step 6: Execute the `terraform init` command
 
 Navigate to the `output/ibm-vpc/terraform` folder and execute the `terraform init` command.
 
@@ -182,7 +192,7 @@ cd output/ibm-vpc/terraform
 terraform init
 ```
 
-### Step 6: Execute the `terraform plan`
+### Step 7: Execute the `terraform plan`  command
 
 Execute the `terraform plan` command.
 
@@ -199,15 +209,15 @@ var.ibmcloud_api_key
   Enter a value: 
 ```
 
-> Note: You can create an IBM Cloud API Key with following command: `ibmcloud iam api-key-create iascable-example`.
+> Note: You can create an `IBM Cloud API Key` with following command: `ibmcloud iam api-key-create iascable-example`.
 
 
-### Step 6: Execute the `terraform apply`
+### Step 8: Execute the `terraform apply`
 
 Execute the `terraform apply` command.
 
 ```sh
-terraform apply
+terraform apply -auto-approve
 ```
 
 * Input of your variables:
@@ -1009,3 +1019,32 @@ Do you want to perform these actions?
 ```sh
 Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
 ```
+
+### Step 9: Execute the `terraform destroy` command
+
+To destroy the provisioned resources, run the following:
+
+```sh
+terraform destroy -auto-approve
+```
+
+>You need to ensure to provide the IBM Cloud API Key, the region and the resource group name.
+
+```sh
+var.ibmcloud_api_key
+  the value of ibmcloud_api_key
+
+  Enter a value: xxxx
+
+var.region
+  The IBM Cloud region where the cluster will be/has been installed.
+
+  Enter a value: us-south
+
+var.resource_group_name
+  The name of the resource group
+
+  Enter a value: default
+```
+
+> Note: Ensure you don't delete the `terraform.tfstate` and the `.terraform.lock.hcl` file.
