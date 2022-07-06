@@ -18,14 +18,14 @@ The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit
 > Please visit the linked resources for more details.
 
 Simplified we can say a [BOM is specified](https://github.com/cloud-native-toolkit/iascable#bom-spec) by modules it uses, variables you can define and providers you can define.
-It is good to know that modules can depend on other modeles, if this is the case the related modules will be included by the framework, as far as I understand.
+It is good to know that modules can depend on other modules, if this is the case the related modules will be included by the framework, as far as I understand.
 
 Here is a simplified overview diagram:
 
 ![](images/ascale-bom-overview.drawio.png)
 
 
-## Prequisites for the example
+## Pre-requisites for the example
 
 Following tools need to be installed on your local computer for follow the step by step instructions.
 
