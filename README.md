@@ -1022,6 +1022,9 @@ Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
 
 ### Step 9: Execute the `terraform destroy` command
 
+
+> Note: Ensure you didn't delete the `terraform.tfstate` and the `.terraform.lock.hcl` files before.
+
 To destroy the provisioned resources, run the following:
 
 ```sh
@@ -1047,4 +1050,32 @@ var.resource_group_name
   Enter a value: default
 ```
 
-> Note: Ensure you don't delete the `terraform.tfstate` and the `.terraform.lock.hcl` file.
+* Output overview:
+
+```sh
+╷
+│ Warning: Experimental feature "module_variable_optional_attrs" is active
+│ 
+│   on .terraform/modules/ibm-vpc-subnets/version.tf line 10, in terraform:
+│   10:   experiments = [module_variable_optional_attrs]
+│ 
+│ Experimental features are subject to breaking changes in
+│ future minor or patch releases, based on feedback.
+│ 
+│ If you have feedback on the design of this feature, please
+│ open a GitHub issue to discuss it.
+╵
+╷
+│ Warning: Argument is deprecated
+│ 
+│   with module.resource_group.module.clis.random_string.uuid,
+│   on .terraform/modules/resource_group.clis/main.tf line 15, in resource "random_string" "uuid":
+│   15:   number  = false
+│ 
+│ Use numeric instead.
+│ 
+│ (and one more similar warning elsewhere)
+╵
+
+Destroy complete! Resources: 36 destroyed.
+```
