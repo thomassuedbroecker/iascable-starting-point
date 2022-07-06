@@ -34,6 +34,13 @@ That is the cloud environment we will use.
 
 This is a step by step example setup to create a `Virtual Private Cloud` with three `Subnets` on IBM Cloud.
 
+* 1 x `Virtual Private Cloud`
+
+* Simplified architecture overview
+
+![](images/vpc-example.drawio.png)
+
+
 ### Step 1: Install CLI
 
 ```sh
