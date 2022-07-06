@@ -9,11 +9,12 @@ That GitHub project uses following resource as input:
 
 ### [Bill of Material](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [Modules](https://modules.cloudnativetoolkit.dev/)
 
-The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. Which is the heart of the framework we could say.
+The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. These two part are the heart of the framework we could say.
 
 Simplified we can as it a [BOM is specified](https://github.com/cloud-native-toolkit/iascable#bom-spec) by modules it uses, variables you can define and providers you can define.
+It is good to know that modules can depend on other modeles.
 
-This is a simplified overview diagram.
+Here is a simplified overview diagram:
 
 ![](images/ascale-bom-overview.drawio.png)
 
