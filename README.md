@@ -150,7 +150,13 @@ iascable build -i firstbom.yaml
     └── launch.sh
 ```
 
+* `output` folder
+
+The folder `output` contains all the content created by the `iascable build` command
+
 * `output/ibm-vpc/terraform` folder
+
+This is table contains the list of files in the terraform folder.
 
 | Filename | Content |
 | --- | --- |
