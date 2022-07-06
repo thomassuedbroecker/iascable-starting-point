@@ -60,7 +60,7 @@ curl -sL https://raw.githubusercontent.com/cloud-native-toolkit/iascable/main/in
 ### Step 2: Verify the installation
 
 ```sh
-iascable build
+iascable build --help
 ```
 
 * Example output:
@@ -177,11 +177,48 @@ That file converts an existing `variable.yaml` file or variable in the `BOM` fil
 That file simply executes the `terraform init` and 
 `terraform destroy -auto-approve` commands.
 
-* The `ibm-vpc/dependencies.dot` file
+* The `output/ibm-vpc/dependencies.dot` file
 
 That file contains the dependencies which can be visualized for example with [Graphviz Online](https://dreampuf.github.io/GraphvizOnline/).
 
 Example: ![](images/digraph-dependencies.png)
+
+* The `output/bom.yaml` file
+
+That file was created by our own `BOM file`. That file now contains all needed variables. These variables are also reflected in the `output/ibm-vpc/terraform/variables.ft` file.
+
+Here is the content of the newly created file.
+
+```yaml
+apiVersion: cloudnativetoolkit.dev/v1alpha1
+kind: BillOfMaterial
+metadata:
+  name: ibm-vpc
+spec:
+  modules:
+    - name: ibm-vpc
+      alias: ibm-vpc
+      version: v1.16.0
+    - name: ibm-vpc-subnets
+      alias: ibm-vpc-subnets
+      version: v1.13.2
+    - name: ibm-resource-group
+      alias: resource_group
+      version: v3.2.16
+  variables:
+    - name: region
+      type: string
+      description: The IBM Cloud region where the cluster will be/has been installed.
+    - name: ibmcloud_api_key
+      type: string
+    - name: ibm-vpc-subnets__count
+      type: number
+      description: The number of subnets that should be provisioned
+      defaultValue: 3
+    - name: resource_group_name
+      type: string
+      description: The name of the resource group
+```
 
 ### Step 6: Execute the `terraform init` command
 
