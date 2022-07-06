@@ -195,7 +195,7 @@ var.ibmcloud_api_key
 > Note: You can create an IBM Cloud API Key with following command: `ibmcloud iam api-key-create iascable-example`.
 
 
-### Step 6: Execute the `terraform plan`
+### Step 6: Execute the `terraform apply`
 
 Execute the `terraform apply` command.
 
@@ -203,7 +203,7 @@ Execute the `terraform apply` command.
 terraform apply
 ```
 
-* Output:
+* Input of your variables:
 
 ```sh
 var.ibmcloud_api_key
@@ -219,6 +219,8 @@ var.resource_group_name
 
   Enter a value: default
 ```
+
+* Output overview of the resources which will be created:
 
 ```sh
 Terraform used the selected providers to generate the following
