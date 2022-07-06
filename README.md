@@ -154,7 +154,7 @@ iascable build -i firstbom.yaml
 
 The folder `output` contains all the content created by the `iascable build` command
 
-* `ibm-vpc` folder
+* `output/ibm-vpc` folder
 
 The folder `ibm-vpc` is the name we used in ower own `BOM` file. Let us call that folder project folder, which was defined in meta data.
 
