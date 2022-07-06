@@ -27,7 +27,7 @@ Here is a simplified overview diagram:
 
 ## Pre-requisites for the example
 
-Following tools need to be installed on your local computer for follow the step by step instructions.
+Following tools need to be installed on your local computer to follow the step by step instructions.
 
 * Terraform
 * Git
