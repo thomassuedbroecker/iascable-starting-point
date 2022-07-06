@@ -187,7 +187,7 @@ Example: ![](images/digraph-dependencies.png)
 
 That file was created by our own `BOM file`. That file now contains all needed variables. These variables are also reflected in the `output/ibm-vpc/terraform/variables.ft` file.
 
-Here is the content of the newly created file.
+Here is the content of the newly created `bom.yaml` file.
 
 ```yaml
 apiVersion: cloudnativetoolkit.dev/v1alpha1
