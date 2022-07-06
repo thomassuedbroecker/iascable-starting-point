@@ -28,3 +28,10 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 examples/output/ibm-vpc/terraform/.terraform.lock.hcl
+temp.txt
+examples/output/ibm-vpc/terraform/clis-debug.log
+examples/output/ibm-vpc/terraform/bin2/.igc-release
+examples/output/ibm-vpc/terraform/bin2/igc
+examples/output/ibm-vpc/terraform/bin2/jq
+examples/output/ibm-vpc/terraform/bin2/yq3
+examples/output/ibm-vpc/terraform/bin2/yq4
