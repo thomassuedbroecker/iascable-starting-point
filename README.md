@@ -997,6 +997,8 @@ Do you want to perform these actions?
   Enter a value: yes
 ```
 
+* Final result of the creation
+
 ```sh
 Apply complete! Resources: 36 added, 0 changed, 0 destroyed.
 ```
