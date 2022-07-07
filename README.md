@@ -43,11 +43,11 @@ That is the cloud environment we will use.
 
 This is a step by step example setup to create a `Virtual Private Cloud` with three `Subnets` on IBM Cloud.
 
-* 1 x `Virtual Private Cloud`
-* 3 x `Subnets`
-* 2 x `Access Control Lists`
-* 1 x `Routing Table`
-* 2 x `Security Groups`
+* 1 x [`Virtual Private Cloud`](https://www.ibm.com/cloud/learn/vpc)
+* 3 x [`Subnets`](https://cloud.ibm.com/docs/subnets?topic=subnets-getting-started)
+* 2 x [`Access Control Lists`](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls)
+* 1 x [`Routing Table`](https://cloud.ibm.com/docs/vpc?topic=vpc-about-custom-routes)
+* 2 x [`Security Groups`](https://cloud.ibm.com/docs/security-groups?topic=security-groups-about-ibm-security-groups)
 
 * Simplified architecture overview
 
