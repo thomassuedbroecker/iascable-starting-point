@@ -24,7 +24,7 @@ Here is a simplified overview diagram of the dependencies:
 
 ![](images/ascale-bom-overview.drawio.png)
 
-Here is a simplified activity diagram that shows the activities by the user and the `IasCable` framework.
+Here is a simplified activity diagram that shows the activities carried out by the user and the `IasCable` framework.
 
 ![](images/activity-diagram.drawio.png)
 
