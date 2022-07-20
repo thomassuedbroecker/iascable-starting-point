@@ -13,7 +13,7 @@ Let us have first a look the basic components of the `IasCable` framework.
 
 ### [Bill of Material](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [Modules](https://modules.cloudnativetoolkit.dev/)
 
-The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/), which you need to understand. These two part are the heart of the framework we could say. 
+The IasCable uses a [`Bill of Material`](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [`Modules`](https://modules.cloudnativetoolkit.dev/)(from the [Software Everywhere project](https://github.com/cloud-native-toolkit/software-everywhere)), which you need to understand. These two parts are the heart of the framework we could say to realize the objective to  build an installable component infrastructure based on components from a catalog of available modules.
 
 > Please visit the linked resources for more details.
 
@@ -27,6 +27,25 @@ Here is a simplified overview diagram of the dependencies:
 Here is a simplified activity diagram that shows the activities carried out by the user and the `IasCable` framework.
 
 ![](images/activity-diagram.drawio.png)
+
+### Realize [Software Everywhere](https://github.com/cloud-native-toolkit/software-everywhere) with [Bill of Material](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) and [Modules](https://modules.cloudnativetoolkit.dev/)
+
+Simplified we can say, we have two basic roles in that context:
+
+1. `Creaters` (Architect, Developer
+or Operator) defining [Bill of Materials](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) to create Terraform automation for creating specific infrastructure based on reusing existing Terraform modules.
+2. `Consumers` who using the create Terraform automation based on the `BOM` definition.
+
+And we have two major elements to define and create the needed Terraform automation.
+
+1. The `BOM` configures `IasCable` to point to right Terraform modules in a module catalog to create the Terraform automation code.
+2. `IasCable` is used Terraform modules to create a Terraform automation which will be consumed.
+
+The following diagram shows some high level dependencies.
+
+![](images/software-everywhere-getting-started.drawio.png)
+
+
 
 ## Pre-requisites for the example
 
