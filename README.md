@@ -193,8 +193,8 @@ This is table contains the list of files in the terraform folder.
 | --- | --- |
 | `output/ibm-vpc/terraform/main.tf` | Here you see a number of modules defined including the defined `ibm-vpc` and `ibm-vpc-subnets` from the BOM file. |
 | `output/ibm-vpc/terraform/providers.tf` | Simply contains the needed cloud provider information. In that case what we need to specify for `IBM Cloud`. |
-| `output/ibm-vpc/terraform/variables.ft` | Contains the specification for the used variable in the `main.tf` or other Terrafrom files. |
-| `output/ibm-vpc/terraform/version.ft` | Contains the specification for the used Terrafrom provider sources and versions. In that case only IBM is listed.|
+| `output/ibm-vpc/terraform/variables.ft` | Contains the specification for the used variable in the `main.tf` or other Terraform files. |
+| `output/ibm-vpc/terraform/version.ft` | Contains the specification for the used Terraform provider sources and versions. In that case only IBM is listed.|
 | `output/ibm-vpc/terraform/ibm-vpc.auto.tfvars` | That file can be used to configure the variable values. (maybe add to .gitignore) During the execution of `terraform plan` and `terraform apply` you will be ask for input, if you didn't specify that values. |
 
 * The `output/launch.sh` file
