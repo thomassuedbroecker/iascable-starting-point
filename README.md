@@ -32,7 +32,7 @@ Here is a simplified activity diagram that shows the activities carried out by t
 
 Simplified we can say, we have two basic roles in that context:
 
-1. `Creaters` (Architect, Developer
+1. `Creators` (Architect, Developer
 or Operator) defining [Bill of Materials](https://github.com/cloud-native-toolkit/iascable#bill-of-material-structure) to create Terraform automation for creating specific infrastructure based on reusing existing Terraform modules.
 2. `Consumers` who using the create Terraform automation based on the `BOM` definition.
 
